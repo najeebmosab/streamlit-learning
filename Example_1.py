@@ -2,6 +2,9 @@ import streamlit as st
 
 st.title("My First Streamlit App")
 
+age = st.slider("اختَر عمرك", min_value=0, max_value=100, value=25)
+st.write("العمر الذي اخترته:", age)
+
 name = st.text_input("اكتب اسمك")
 
 if st.button("اعرض الترحيب"):
