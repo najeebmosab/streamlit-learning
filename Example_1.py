@@ -27,6 +27,17 @@ if uploaded_file is not None:
     st.write("العرض:", image.width)
     st.write("الارتفاع:", image.height)
     st.write("نمط الألوان:", image.mode)
+
+    st.subheader("تغيير أبعاد الصورة")
+
+    new_width = st.slider("العرض الجديد", 50, 500, 200)
+    new_height = st.slider("الارتفاع الجديد", 50, 500, 200)
+
+    resized_image = image.resize((new_width, new_height))
+
+    st.image(resized_image, caption="الصورة بعد تغيير الأبعاد")
+
+    st.write("الأبعاد الجديدة — عرض، ارتفاع:", resized_image.size)
     
 name = st.text_input("اكتب اسمك")
 if st.button("اعرض الترحيب"):
